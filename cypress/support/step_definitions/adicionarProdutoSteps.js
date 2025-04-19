@@ -19,6 +19,7 @@ Then('apresentará a mensagem Produto adicionado ao carrinho', () => {
   cy.get('#alert-container').should('not.be.visible');
 });
 
-Then('em cima do carrinho aparece o total de {string} produto', (mensagem) => {
+Then('em cima do carrinho aparece o total de {string} produto', (mensagem) => { 
   cy.get('#cart-count').should('be.visible').contains(mensagem, { matchCase: false });
-});
+}); 
+
