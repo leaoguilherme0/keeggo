@@ -4,7 +4,7 @@ Given('que esteja na home do QA Commerce sem nenhum produto no carrinho', () => 
   
   cy.request({
     method: 'DELETE',
-    url: 'http://localhost:3000/api/carrinho/1',
+    url: '/api/carrinho/1',
     headers: {
       accept: 'application/json',
     },
@@ -16,6 +16,7 @@ Given('que esteja na home do QA Commerce sem nenhum produto no carrinho', () => 
 When('clicar no botão Adicionar ao carrinho do primeiro produto apresentado', () => {
   cy.get(':nth-child(1) > .card > .card-body > .btn').click();
 });
+
 
 Then('apresentará a mensagem Produto adicionado ao carrinho', () => {
   cy.get('#alert-container').should(($alert) => {

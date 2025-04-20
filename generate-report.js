@@ -7,16 +7,14 @@ const fs = require('fs');
     .toISOString()
     .replace(/[-:]/g, '')
     .replace(/\..+/, '')
-    .slice(2); // YYMMDDHHMMSS
+    .slice(2); 
 
   const reportName = `${timestamp}_TesteQACommerce`;
 
-  // Faz o merge dos arquivos JSON gerados pelos testes
   const jsonReport = await merge.merge({
     files: ['./cypress/reports/*.json']
   });
 
-  // Gera o HTML com o nome desejado
   await marge.create(jsonReport, {
     reportDir: './cypress/reports',
     reportFilename: reportName,
@@ -24,7 +22,6 @@ const fs = require('fs');
     charts: true
   });
 
-  // Apaga todos os arquivos JSON após gerar o HTML
   fs.readdirSync('./cypress/reports')
     .filter(file => file.endsWith('.json'))
     .forEach(file => fs.unlinkSync(`./cypress/reports/${file}`));

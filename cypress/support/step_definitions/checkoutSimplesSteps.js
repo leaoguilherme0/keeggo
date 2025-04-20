@@ -1,40 +1,44 @@
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
 
-Given('que esteja no carrinho com um produto', () => {
-  
-    cy.request({
-        method: 'DELETE',
-        url: 'http://localhost:3000/api/carrinho/1',
-        headers: {
-          accept: 'application/json',
-        },
-      });
 
-    cy.request({
-        method: 'POST',
-        url: 'http://localhost:3000/api/carrinho',
-        headers: {
-          accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: {
-          userId: 1,
-          productId: 1,
-          quantity: 1
-        }
-      }).then((res) => {
-        response = res;
-      });
+Given('que esteja no checkout com um produto', () => {
   
-  cy.visit('/cart.html');
+  cy.request({
+      method: 'DELETE',
+      url: '/api/carrinho/1',
+      headers: {
+        accept: 'application/json',
+      },
+    });
+
+  cy.request({
+      method: 'POST',
+      url: '/api/carrinho',
+      headers: {
+        accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: {
+        userId: 1,
+        productId: 1,
+        quantity: 1
+      }
+    }).then((res) => {
+      response = res;
+    });
+
+cy.visit('/checkout.html');
 });
 
 When('clicar no botão {string}', (botao) => {
-    //cy.get('#totals > .btn').click();
+    
     cy.contains(botao).click();
 
 });
 
+When('clico no link {string}', (textoDoLink) => {
+  cy.contains(textoDoLink).click();
+});
 
 When("preencher todos os dados do cliente", () => {
 
@@ -67,4 +71,19 @@ When("preencher todos os dados do cliente", () => {
 
 Then("apresentará a mensagem que todos os campos não foram preenchidos", () => {
     cy.get('#alert-container').contains('Por favor, preencha todos os campos obrigatório marcados com asteriscos!')
+});
+
+
+Then('abrirá a página {string} na nova aba {string}', (textoDoLink, urlEsperada) => {
+  cy.contains('a', textoDoLink)
+    .should('have.attr', 'href')
+    .then((href) => {
+      
+      const baseUrl = Cypress.config('baseUrl');
+      const urlCompleta = new URL(href, baseUrl).toString();
+
+      expect(urlCompleta).to.eq(urlEsperada); 
+    });
+
+  cy.contains('a', textoDoLink).should('have.attr', 'target', '_blank');
 });
