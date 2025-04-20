@@ -24,7 +24,24 @@ When('eu adiciono um produto via API', () => {
   });
 });
 
-Then('a resposta deve indicar sucesso', () => {
-  expect(response.status).to.eq(201);
-  expect(response.body).to.have.property('message');
+When('tento adicionar um produto via API sem body', () => {
+  cy.request({
+    method: 'POST',
+    url: 'http://localhost:3000/api/carrinho',
+    headers: {
+      accept: 'application/json',
+      'Content-Type': 'application/json'
+    }
+  }).then((res) => {
+    response = res;
+  });
+});
+
+Then('retornará status {int}', (status) => {
+  expect(response.status).to.eq(status);
+});
+
+
+Then('apresentará a mensagem {string}', (mensagem) => {
+  expect(response.body).to.have.property('message').to.eq(mensagem);
 });

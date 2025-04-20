@@ -1,12 +1,12 @@
-Feature: Checkout Simples
+Feature: Checkout
 
-  Scenario: Efetuar o checkout simples
+  Scenario: Efetuar o checkout
     Given que esteja no checkout com um produto
     When preencher todos os dados do cliente
     And clicar no botão "Finalizar Pedido"
     Then apresentará a mensagem de agradecimento
 
-  Scenario: No checkout simples não preencher todos os campos obrigatórios
+  Scenario: No checkout não preencher todos os campos obrigatórios
     Given que esteja no checkout com um produto
     When clicar no botão "Finalizar Pedido"
     Then apresentará a mensagem que todos os campos não foram preenchidos

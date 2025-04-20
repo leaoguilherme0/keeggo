@@ -17,6 +17,9 @@ When('clicar no botão Adicionar ao carrinho do primeiro produto apresentado', (
   cy.get(':nth-child(1) > .card > .card-body > .btn').click();
 });
 
+When('clicar no botão Adicionar ao carrinho do segundo produto apresentado', () => {
+  cy.get(':nth-child(2) > .card > .card-body > .btn').click();
+});
 
 Then('apresentará a mensagem Produto adicionado ao carrinho', () => {
   cy.get('#alert-container').should(($alert) => {
@@ -32,4 +35,15 @@ Then('apresentará a mensagem Produto adicionado ao carrinho', () => {
 Then('em cima do carrinho aparece o total de {string} produto', (mensagem) => { 
   cy.get('#cart-count').should('be.visible').contains(mensagem, { matchCase: false });
 }); 
+
+
+Then('será direcionado para o carrinho', () => { 
+  
+}); 
+
+
+Then('apresentará o produto adicionado', () => { 
+  cy.get('#cart-list').should('be.visible')
+}); 
+  
 
