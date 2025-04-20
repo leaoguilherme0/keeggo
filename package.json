@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
+    "clean:reports": "rm -f cypress/reports/*.json",
+    "cypress:run": "cypress run --reporter mochawesome",
     "generate:report": "node generate-report.js",
-    "test": "npm run cypress:run && npm run generate:report"
+    "test": "npm run clean:reports && npm run cypress:run && npm run generate:report"
   },
   "dependencies": {
     "cypress": "^13.7.0",

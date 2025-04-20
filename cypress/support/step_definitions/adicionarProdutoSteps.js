@@ -1,6 +1,15 @@
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
 
-Given('teste', () => {
+Given('que esteja na home do QA Commerce sem nenhum produto no carrinho', () => {
+  
+  cy.request({
+    method: 'DELETE',
+    url: 'http://localhost:3000/api/carrinho/1',
+    headers: {
+      accept: 'application/json',
+    },
+  });
+  
   cy.visit('/');
 });
 
