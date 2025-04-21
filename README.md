@@ -1,15 +1,15 @@
 # 🧪 Keeggo - Testes Automatizados com Cypress e Cucumber
 
-Este repositório contém uma suíte de testes automatizados desenvolvida com [Cypress](https://www.cypress.io/) e [Cucumber](https://cucumber.io/), utilizando `ESBuild` como empacotador. Ele é ideal para testar aplicações web com clareza, legibilidade e performance.
+Este repositório contém uma suíte de testes automatizados desenvolvida com [Cypress](https://www.cypress.io/) e [Cucumber](https://cucumber.io/), utilizando `ESBuild` 
 
 ---
 
 ## 🚀 Tecnologias Utilizadas
 
-- [Cypress 13](https://docs.cypress.io/) — Framework de testes end-to-end
-- [Cypress Cucumber Preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor) — Suporte ao formato BDD
-- [ESBuild](https://esbuild.github.io/) — Pré-processador rápido de bundling
-- [Node.js](https://nodejs.org/) — Ambiente de execução
+- [Cypress 13](https://docs.cypress.io/)
+- [Cypress Cucumber Preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor)
+- [ESBuild](https://esbuild.github.io/)
+- [Node.js](https://nodejs.org/)
 
 ---
 
