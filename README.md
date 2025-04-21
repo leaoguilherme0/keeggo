@@ -37,10 +37,13 @@ Este repositório contém uma suíte de testes automatizados desenvolvida com [C
 ```bash
 # Clone o repositório
 git clone https://github.com/leaoguilherme0/keeggo.git
+```
 
-# Acesse a pasta
+# Acesse a pasta do projeto
 cd keeggo
 
+
+```bash
 # Instale as dependências
 npm install
 ```
