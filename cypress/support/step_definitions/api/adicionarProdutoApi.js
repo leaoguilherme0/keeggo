@@ -1,9 +1,10 @@
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
+import HomePage from '@pages/HomePage';
 
 let response;
 
 Given('o carrinho está vazio', () => {
-  cy.request('DELETE', 'http://localhost:3000/api/carrinho/1');
+  HomePage.limparCarrinho();
 });
 
 When('eu adiciono um produto via API', function () {

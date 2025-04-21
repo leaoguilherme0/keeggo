@@ -3,11 +3,7 @@ class CheckoutPage {
       cy.visit('/checkout.html');
     }
   
-    limparCarrinho() {
-      cy.request('DELETE', '/api/carrinho/1', {
-        headers: { accept: 'application/json' },
-      });
-    }
+
   
     adicionarProduto(body) {
       return cy.request({

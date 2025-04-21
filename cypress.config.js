@@ -2,6 +2,7 @@ const { defineConfig } = require("cypress");
 const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
 const preprocessor = require("@badeball/cypress-cucumber-preprocessor");
 const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esbuild");
+const path = require("path");
 
 async function setupNodeEvents(on, config) {
   await preprocessor.addCucumberPreprocessorPlugin(on, config);
@@ -34,5 +35,10 @@ module.exports = defineConfig({
     overwrite: true,
     html: false,
     json: true
-  }
+  },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "cypress/support"),
+    },
+  },
 });
