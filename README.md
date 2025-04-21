@@ -39,9 +39,10 @@ Este repositório contém uma suíte de testes automatizados desenvolvida com [C
 git clone https://github.com/leaoguilherme0/keeggo.git
 ```
 
+```bash
 # Acesse a pasta do projeto
 cd keeggo
-
+```
 
 ```bash
 # Instale as dependências
