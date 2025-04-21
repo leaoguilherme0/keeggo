@@ -23,18 +23,12 @@ module.exports = defineConfig({
     specPattern: "cypress/e2e/**/*.feature",
     baseUrl: "http://localhost:3000",
     supportFile: false,
+    screenshotOnRunFailure: false
   },
   env: {
     "cypress-cucumber-preprocessor": {
       stepDefinitions: "cypress/support/step_definitions/**/*.{js,ts}"
     }
-  },
-  reporter: "mochawesome",
-  reporterOptions: {
-    reportDir: "cypress/reports",
-    overwrite: true,
-    html: false,
-    json: true
   },
   resolve: {
     alias: {

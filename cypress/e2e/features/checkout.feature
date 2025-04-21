@@ -8,7 +8,7 @@ Feature: Checkout
     And clicar no botão "Finalizar Pedido"
     Then apresentará a mensagem de agradecimento
 
-  Scenario: Efetuar o checkout criando conta
+  Scenario: Efetuar o checkout criando conta - Cenário identificou um bug
     Given que esteja no checkout com um produto
     When preencher todos os dados para entrega
     And selecionar a opção para cria uma nova conta

@@ -6,7 +6,7 @@ Feature: Adicionar produto via API
     Then retornará status 201
     And apresentará a mensagem "Produto adicionado ao carrinho com sucesso."
 
-  Scenario: Executar API sem body
+  Scenario: Executar API sem body - Cenário identificou um bug
     Given o carrinho está vazio
     When tento adicionar um produto via API sem body
     Then retornará status 400
