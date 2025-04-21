@@ -16,6 +16,6 @@ Feature: Adicionar Produto ao carrinho
   Scenario: Adicionar produto ao carrinho
     Given que esteja na home do QA Commerce sem nenhum produto no carrinho
     When clicar no botão Adicionar ao carrinho do primeiro produto apresentado 
-    And clico no link "CARRINHO"
+    And clicar no link "CARRINHO"
     Then será direcionado para o carrinho
     And apresentará o produto adicionado  
